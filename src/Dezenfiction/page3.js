@@ -9,7 +9,7 @@ import odam2 from "../images/odam2.jpg"
 import page3logo from "../images/page3logo.png"
 import {useTranslation} from "react-i18next";
 
-function Page3() {
+function Page3({handleMenuClick}) {
     const {t} = useTranslation();
     return (
         <div className="container">
@@ -22,7 +22,7 @@ function Page3() {
                             {t('page3.card1.text')}
                         </p>
                         <div className="page3-type">
-                            <div className="element1"><button className="connect-all page-3btn ">{t('header.menu5')}</button></div>
+                            <div onClick={() => handleMenuClick("connect-section")} className="element1"><button className="connect-all page-3btn ">{t('header.menu5')}</button></div>
                             <div ><img
                                 className="element2" src={klapa} alt="Error"/>
                             </div>
@@ -35,7 +35,7 @@ function Page3() {
                         <p className="page3-text">
                             {t('page3.card2.text')}</p>
                         <div className="page3-type">
-                            <div className="element1"><button className="connect-all page-3btn">{t('header.menu5')}</button></div>
+                            <div onClick={() => handleMenuClick("connect-section")} className="element1"><button className="connect-all page-3btn">{t('header.menu5')}</button></div>
                             <div className="element2"><img
                                 className="element2" src={tarakan}
                                 alt="Error"/></div>
@@ -48,7 +48,7 @@ function Page3() {
                         <p className="page3-text">
                             {t('page3.card3.text')}</p>
                         <div className="page3-type">
-                            <div className="element1"><button className="connect-all page-3btn">{t('header.menu5')}</button></div>
+                            <div onClick={() => handleMenuClick("connect-section")} className="element1"><button className="connect-all page-3btn">{t('header.menu5')}</button></div>
                             <div className="element2"><img
                                 className="element2" src={chayon}
                                 alt="Error"/></div>
@@ -61,7 +61,7 @@ function Page3() {
                         <p className="page3-text">
                             {t('page3.card4.text')}</p>
                         <div className="page3-type">
-                            <div className="element1"><button className="connect-all page-3btn">{t('header.menu5')}</button></div>
+                            <div onClick={() => handleMenuClick("connect-section")} className="element1"><button className="connect-all page-3btn">{t('header.menu5')}</button></div>
                             <div className="element2"><img
                                 className="element2" src={kemiruvchi}
                                 alt="Error"/></div>
@@ -74,7 +74,7 @@ function Page3() {
                         <p className="page3-text">
                             {t('page3.card5.text')}</p>
                         <div className="page3-type">
-                            <div className="element1"><button className="connect-all page-3btn">{t('header.menu5')}</button></div>
+                            <div onClick={() => handleMenuClick("connect-section")} className="element1"><button className="connect-all page-3btn">{t('header.menu5')}</button></div>
                             <div className="element2"><img
                                 className="element2" src={burga} alt="Error"/>
                             </div>
@@ -93,7 +93,7 @@ function Page3() {
                             <p className="page3-title" data-aos="fade-left">
                                 {t('page3.backg.text')}
                             </p>
-                            <div data-aos="fade-left"><button className="connect-all">{t('header.menu5')}</button>
+                            <div onClick={() => handleMenuClick("connect-section")} data-aos="fade-left"><button className="connect-all">{t('header.menu5')}</button>
                             </div>
                         </div>
                     </Col>

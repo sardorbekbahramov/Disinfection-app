@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, {useEffect, useState} from 'react';
 import Dezenfection from "./Dezenfiction/Dezenfiction";
 import "./Dezenfiction/desenfection.css"
 import 'animate.css';
@@ -11,20 +11,34 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 function App() {
+    const [open, setOpen] = useState(false);
     useEffect(()=>{
         AOS.init({
-            duration: 600, // Animation duration in milliseconds
-            easing: 'ease-in-out', // Easing type
-            offset: 200, // Offset (in pixels) from the bottom of the window when triggering animations
+            duration: 600,
+            easing: 'ease-in-out',
+            offset: 200,
         });
 
     },[])
+    const handleMenuClick = (sectionId) => {
+        const section = document.getElementById(sectionId);
+        const menuHeight = document.querySelector('.menu').offsetHeight;
+
+        if (section) {
+            const offset = section.offsetTop - menuHeight;
+            window.scrollTo({
+                top: offset,
+                behavior: "smooth",
+            });
+        }
+        setOpen(false)
+    };
       return (
         <React.Fragment>
             <Dezenfection/>
-            <Page1/>
-            <Page2/>
-            <Page3/>
+            <Page1 handleMenuClick={handleMenuClick}/>
+            <Page2 handleMenuClick={handleMenuClick}/>
+            <Page3 handleMenuClick={handleMenuClick}/>
             <Page4/>
             <FoterPage/>
         </React.Fragment>

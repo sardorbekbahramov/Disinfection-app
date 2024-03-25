@@ -4,8 +4,9 @@ import odam from "../images/odam_dezinfiksiya.jpg";
 import aparat from "../images/aparat.jpeg";
 import {useTranslation} from "react-i18next";
 
-function Page1() {
+function Page1({handleMenuClick}) {
     const {t} = useTranslation();
+
      return (
         <div className="container" id="main-section">
             <div className="page1">
@@ -22,7 +23,7 @@ function Page1() {
                                 <img className="aparat" style={{width: '45%', marginTop: '-70px'}} src={aparat}
                                      alt="Error"/>
                             </div>
-                            <div data-aos="fade-right">
+                            <div data-aos="fade-right" onClick={() => handleMenuClick("connect-section")}>
                                 <button className="connect-all">{t('header.menu5')}</button>
                             </div>
                         </div>

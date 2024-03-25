@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBookmark } from '@fortawesome/free-regular-svg-icons';
 import { faHandshake } from '@fortawesome/free-regular-svg-icons';
 
-function Page2() {
+function Page2({handleMenuClick}) {
     const {t} = useTranslation();
     return (
         <section>
@@ -48,7 +48,7 @@ function Page2() {
                             <Col lg={12}>
                                 <p className="page2-info2" data-aos="fade-left">{t('page2.backg.title')}</p>
                                 <p  className="page2-text2 " data-aos="fade-left">{t('page2.backg.text')}</p>
-                                <div data-aos="fade-left">
+                                <div data-aos="fade-left" onClick={() => handleMenuClick("connect-section")}>
                                     <button className="connect-all">{t('header.menu5')}</button>
                                 </div>
                             </Col>
