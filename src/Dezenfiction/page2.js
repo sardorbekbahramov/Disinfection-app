@@ -14,7 +14,7 @@ function Page2({handleMenuClick}) {
     return (
         <section>
             <div className="container" id="about-section">
-                <h1 data-aos="fade-left" className="page2-text">
+                <h1 data-aos="fade-right" className="page2-text">
                     {t('page2.title')}
                 </h1>
                 <hr/>
@@ -46,9 +46,9 @@ function Page2({handleMenuClick}) {
                         <Row>
                             <Col lg={12}></Col>
                             <Col lg={12}>
-                                <p className="page2-info2" data-aos="fade-left">{t('page2.backg.title')}</p>
-                                <p  className="page2-text2 " data-aos="fade-left">{t('page2.backg.text')}</p>
-                                <div data-aos="fade-left" onClick={() => handleMenuClick("connect-section")}>
+                                <p className="page2-info2" data-aos="fade-right">{t('page2.backg.title')}</p>
+                                <p  className="page2-text2 " data-aos="fade-right">{t('page2.backg.text')}</p>
+                                <div data-aos="fade-right" onClick={() => handleMenuClick("connect-section")}>
                                     <button className="connect-all">{t('header.menu5')}</button>
                                 </div>
                             </Col>
