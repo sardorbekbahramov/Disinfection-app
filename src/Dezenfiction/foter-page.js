@@ -18,8 +18,8 @@ function FoterPage() {
                             <img className="logo-img" src={logo} alt="Error"/>
                         </div>
                     </Col>
-                    <Col lg={8} sm={24} xs={24}>
-                        <div style={{display: 'flex', alignItems: 'center'}} data-aos="fade-right">
+                    <Col lg={8} sm={24} xs={24} data-aos="fade-right">
+                        <div style={{display: 'flex', alignItems: 'center'}} >
                             <div className="locate">
                                 <span style={{fontSize: '20px'}}><FontAwesomeIcon icon={faLocation}/></span>
                             </div>
@@ -29,7 +29,7 @@ function FoterPage() {
                                 style={{fontSize: '20px', marginTop: "25px",color:'black'}}>   <ArrowRightOutlined/></a>
                         </div>
 
-                        <div style={{display: 'flex', alignItems: 'center'}} data-aos="fade-right">
+                        <div style={{display: 'flex', alignItems: 'center'}} >
                             <div className="locate">
                                 <span style={{fontSize: '20px'}}><PhoneOutlined/></span>
                             </div>
