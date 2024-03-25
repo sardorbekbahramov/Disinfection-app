@@ -97,6 +97,9 @@ body {
     .ant-drawer-content-wrapper {
         width: 300px !important
     }
+    .mobile-info .page1-text {
+        font-size: 30px !important;
+    }
     .page1-info .page1-infotext {
      font-size: 16px;
     }
@@ -183,11 +186,11 @@ body {
         border-radius: 30px;
     }
     .container .page4-text {
-        font-size: 18px !important;
+        font-size: 16px !important;
         max-width: 80%;
     }
     .container .page4-text-element{
-        font-size: 15px !important;
+        font-size: 14px !important;
     }
 }
 @media screen and (max-width: 768px ){
