@@ -235,7 +235,7 @@ body {
         height: 100px;
     }
     .mobile-info {
-        background-image: url("../images/images_backg.jpeg");
+        background-image: url("../images/fon.jpg");
         background-size: cover;
         padding: 30px 30px;
         width: 100%;
@@ -274,9 +274,10 @@ body {
     }
 
     .page1-info .page1-infotext {
-        color: white;
+        color: #AE0C0E;
         font-weight: bold;
         font-family: Unbounded;
+        text-shadow: 2px 2px 2px #40b643;
     }
     .container .page2-haqida{
         font-size: 45px;
@@ -414,7 +415,7 @@ body {
         width: 85%;
     }
     .page2-card .page2-text{
-        font-size: 30px;
+        font-size: 20px;
     }
     .page2-card .page2-info{
         font-size: 12px;
@@ -536,6 +537,7 @@ body {
     border-radius: 15px;
     margin-right: 0;
     padding-bottom: 10px;
+    height: 280px;
 }
 .page2-img{
     width: 85%;

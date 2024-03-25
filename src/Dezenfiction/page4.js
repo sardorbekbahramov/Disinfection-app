@@ -5,11 +5,12 @@ import dezinodam from "../images/page4-img.webp"
 import congrats from "../images/congrats.jpg"
 import axios from "axios";
 import {useTranslation} from "react-i18next";
-
 function Page4() {
+    const [form] = Form.useForm();
     const [clicks, setClicks] = useState(Array(3).fill(false));
     const [showModal, setShowModal] = useState(false);
     const {t} = useTranslation();
+
 
     useEffect(() => {
         let modalTimer;
@@ -44,12 +45,14 @@ function Page4() {
             },
         }).then(res => {
             setShowModal(true)
+            form.resetFields();
         }).catch(error => {
             message.error("Xatolik");
         });
     };
     const handleClose = () => {
         setShowModal(false)
+        form.resetFields();
     }
 
     const faqData = [
@@ -102,6 +105,7 @@ function Page4() {
                             {t('page4.form.title')}
                         </p>
                         <Form
+                            form={form}
                             name="basic"
                             style={{
                                 maxWidth: 600,
