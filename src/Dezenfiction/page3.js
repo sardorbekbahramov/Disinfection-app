@@ -89,11 +89,11 @@ function Page3({handleMenuClick}) {
                     </Col>
                     <Col lg={12} md={24} sm={24}>
                         <div className="page3-info">
-                            <img  src={page3logo} alt="Error" data-aos="fade-left"/>
-                            <p className="page3-title" data-aos="fade-left">
+                            <img  src={page3logo} alt="Error" data-aos="fade-right"/>
+                            <p className="page3-title" data-aos="fade-right">
                                 {t('page3.backg.text')}
                             </p>
-                            <div onClick={() => handleMenuClick("connect-section")} data-aos="fade-left"><button className="connect-all">{t('header.menu5')}</button>
+                            <div onClick={() => handleMenuClick("connect-section")} data-aos="fade-right"><button className="connect-all">{t('header.menu5')}</button>
                             </div>
                         </div>
                     </Col>
