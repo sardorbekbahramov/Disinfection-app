@@ -1,17 +1,16 @@
-import React, {useEffect, useState} from 'react';
-import Dezenfection from "./Dezenfiction/Dezenfiction";
-import "./Dezenfiction/desenfection.css"
+import React, {useEffect} from 'react';
+import Header from "./Dezenfiction/header/Header";
+import "./Dezenfiction/responsive.css"
 import 'animate.css';
-import Page1 from "./Dezenfiction/page1";
-import Page2 from "./Dezenfiction/page2";
-import Page3 from "./Dezenfiction/page3";
-import Page4 from "./Dezenfiction/page4";
-import FoterPage from "./Dezenfiction/foter-page";
+import Main from "./Dezenfiction/pages/Main";
+import About from "./Dezenfiction/pages/About";
+import ServiceType from "./Dezenfiction/pages/ServceTypes";
+import Page4 from "./Dezenfiction/pages/Contact";
+import Footer from "./Dezenfiction/footer/Footer";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 function App() {
-    const [open, setOpen] = useState(false);
     useEffect(()=>{
         AOS.init({
             duration: 600,
@@ -31,16 +30,15 @@ function App() {
                 behavior: "smooth",
             });
         }
-        setOpen(false)
-    };
+    }; 
       return (
         <React.Fragment>
-            <Dezenfection/>
-            <Page1 handleMenuClick={handleMenuClick}/>
-            <Page2 handleMenuClick={handleMenuClick}/>
-            <Page3 handleMenuClick={handleMenuClick}/>
+            <Header/>
+            <Main handleMenuClick={handleMenuClick}/>
+            <About handleMenuClick={handleMenuClick}/>
+            <ServiceType handleMenuClick={handleMenuClick}/>
             <Page4/>
-            <FoterPage/>
+            <Footer/>
         </React.Fragment>
     )
 }

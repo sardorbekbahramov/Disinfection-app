@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from "react";
-import logo from "../images/logo-dezline.png"
+import logo from "../assets/mainlogo1.png"
 import {Select,Drawer} from 'antd';
 import {MenuOutlined} from "@ant-design/icons";
 import { useTranslation } from 'react-i18next';
 
-function Dezenfection() {
+function Header() {
     const [scrolled, setScrolled] = useState(false);
     const { t, i18n } = useTranslation();
     const [open, setOpen] = useState(false);
@@ -47,11 +47,11 @@ function Dezenfection() {
     };
 
     return (
-        <section>
+        <section className="header w-full sticky top-0 z-50">
             <div className={`menu ${scrolled ? 'scrolled' : ''}`}>
                 <div className="container">
                     <div className="menu-item">
-                        <div className="logo" onClick={() => handleMenuClick("main-section")} style={{cursor:'pointer'}}>
+                        <div className="logo cursor-pointer" onClick={() => handleMenuClick("main-section")}>
                             <img className="logo-img" src={logo} alt="Error"/>
                         </div>
                             <div className="menu-item-const menu-item">
@@ -100,48 +100,49 @@ function Dezenfection() {
                             <MenuOutlined />
                         </div>
                     </div>
-                </div>
-                <Drawer   className="custom-drawer" onClose={onClose} open={open}>
-                    <div onClick={() => handleMenuClick("main-section")} className="menu-items ">
-                        <p>{t('header.menu1')}</p>
-                    </div>
-                    <div onClick={() => handleMenuClick("about-section")} className="menu-items">
-                        <p>{t('header.menu2')}</p>
-                    </div>
-                    <div onClick={() => handleMenuClick("services-section")} className="menu-items" >
-                        <p>{t('header.menu3')}</p>
-                    </div>
-                    <div onClick={() => handleMenuClick("faq-section")} className="menu-items" >
-                        <p>{t('header.menu4')}</p>
-                    </div>
-                    <div className="menu-items ">
-                        <Select
-                            labelInValue
-                            defaultValue={{
-                                value: 'uzbek',
-                                label: 'Узбекча',
-                            }}
-                            style={{
-                                width: 120,
-                                color: 'black'
-                            }}
-                            onChange={handleChange}
-                            options={[
-                                {
+                    
+                    <Drawer   className="custom-drawer" onClose={onClose} open={open}>
+                        <div onClick={() => handleMenuClick("main-section")} className="menu-items ">
+                            <p>{t('header.menu1')}</p>
+                        </div>
+                        <div onClick={() => handleMenuClick("about-section")} className="menu-items">
+                            <p>{t('header.menu2')}</p>
+                        </div>
+                        <div onClick={() => handleMenuClick("services-section")} className="menu-items" >
+                            <p>{t('header.menu3')}</p>
+                        </div>
+                        <div onClick={() => handleMenuClick("faq-section")} className="menu-items" >
+                            <p>{t('header.menu4')}</p>
+                        </div>
+                        <div className="menu-items ">
+                            <Select
+                                labelInValue
+                                defaultValue={{
                                     value: 'uzbek',
                                     label: 'Узбекча',
-                                },
-                                {
-                                    value: 'russian',
-                                    label: 'Руский',
-                                },
-                            ]}
-                        />
-                    </div>
-                    <div onClick={() => handleMenuClick("connect-section")} className="menu-items" >
-                        <button className="connect connect1">{t('header.menu5')}</button>
-                    </div>
-                </Drawer>
+                                }}
+                                style={{
+                                    width: 120,
+                                    color: 'black'
+                                }}
+                                onChange={handleChange}
+                                options={[
+                                    {
+                                        value: 'uzbek',
+                                        label: 'Узбекча',
+                                    },
+                                    {
+                                        value: 'russian',
+                                        label: 'Руский',
+                                    },
+                                ]}
+                            />
+                        </div>
+                        <div onClick={() => handleMenuClick("connect-section")} className="menu-items" >
+                            <button className="connect connect1">{t('header.menu5')}</button>
+                        </div>
+                    </Drawer>
+                </div>
             </div>
         </section>
 
@@ -149,4 +150,4 @@ function Dezenfection() {
     )
 }
 
-export default Dezenfection;
+export default Header;

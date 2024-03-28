@@ -1,10 +1,13 @@
 import React, {useEffect, useState} from "react";
 import {Col, Form, Input, Row, message} from "antd";
 import {CloseOutlined, DownOutlined, UpOutlined} from "@ant-design/icons";
-import dezinodam from "../images/page4-img.webp"
-import congrats from "../images/congrats.jpg"
+import dezinodam from "../assets/icon1.png"
+import congrats from "../../images/congrats.jpg"
 import axios from "axios";
 import {useTranslation} from "react-i18next";
+
+
+
 function Page4() {
     const [form] = Form.useForm();
     const [clicks, setClicks] = useState(Array(3).fill(false));
@@ -55,6 +58,29 @@ function Page4() {
         form.resetFields();
     }
 
+    const data = [
+        {
+          cover: <i className='fa-solid fa-truck-fast'></i>,
+          title: "Доставка по всему миру",
+          decs: "У нас конкурентные цены на более 100 миллионов единиц данного товара.",
+        },
+        {
+          cover: <i className='fa-solid fa-id-card'></i>,
+          title: "Безопасная оплата",
+          decs: "У нас конкурентные цены на более 100 миллионов единиц данного товара.",
+        },
+        {
+          cover: <i className='fa-solid fa-shield'></i>,
+          title: "Покупайте с уверенностью ",
+          decs: "У нас конкурентные цены на более 100 миллионов единиц данного товара.",
+        },
+        {
+          cover: <i className='fa-solid fa-headset'></i>,
+          title: "Поддержка 24/7",
+          decs: "У нас конкурентные цены на более 100 миллионов единиц данного товара.",
+        },
+      ]
+
     const faqData = [
         {
             question: t('page4.card1.title'),
@@ -73,22 +99,22 @@ function Page4() {
     return (
         <section>
             <div className="container" id="faq-section">
-                <hr style={{marginTop: '80px'}}/>
+                <hr className=" mt-20"/>
                 <Row>
                     <Col lg={6} md={24}>
-                        <h1 className="page4-title"> {t('page4.title')}</h1>
+                        <h1 className="contact_faq_title text-[#020c31] text-[48px] font-bold"> {t('page4.title')}</h1>
                     </Col>
                     <Col lg={18} md={24}>
                         {faqData.map((item, index) => (
                             <div key={index}>
                                 <Row>
                                     <Col lg={22}>
-                                        <p onClick={() => onClick(index)} className="page4-text">{item.question}</p>
-                                        <p className={`page4-text-element ${clicks[index] ? 'show-answer' : 'hide-answer'}`}>{item.answer}</p>
+                                        <p onClick={() => onClick(index)} className="contact_faq_question_text text-[#676d83] text-[30px] font-bold cursor-pointer px-0 py-8">{item.question}</p>
+                                        <p className={`contact_faq_question_text-element text-[#676d83] text-[24px] max-h-0 ${clicks[index] ? 'show-answer' : 'hide-answer'}`}>{item.answer}</p>
                                     </Col>
                                     <Col lg={2}>
-                                        <div onClick={() => onClick(index)} className="page4-icon">
-                                            <span className="page4-belgi" style={{fontSize: '25px', color: '#020c31'}}>{clicks[index] ? <DownOutlined/> : <UpOutlined />} </span>
+                                        <div onClick={() => onClick(index)} className="contact_faq_question_icon">
+                                            <span className=" text-[#020c31] text-[25px]">{clicks[index] ? <DownOutlined/> : <UpOutlined />} </span>
                                         </div>
                                     </Col>
                                 </Row>
@@ -98,12 +124,31 @@ function Page4() {
                     </Col>
                 </Row>
             </div>
+
+            <div className="wrapper background">
+                <div  className="container grid2">
+                    {
+                        data.map((item, index)=> {
+                            return(
+                                <>
+                                    <div data-aos="zoom-in" className="product" key={index}>
+                                        <div className="img icon-circle">
+                                            <span className='wrapper_icon text-red-600'>{item.cover}</span>
+                                        </div>
+                                        <h3 className=" text-[20px] font-bold">{item.title}</h3>
+                                        <p>{item.decs}</p>
+                                    </div>
+                                </>
+                            )
+                        })
+                    }
+                </div>
+            </div>
+
             <div className="container" id="connect-section">
-                <div className="page4-background">
-                    <div className="page4-card" data-aos="fade-right">
-                        <p className="card-title">
-                            {t('page4.form.title')}
-                        </p>
+                <div className="contact_form_bg  h-[550px] rounded-md flex items-center relative py-0 px-6 mt-[60px] justify-around">
+                    <div className="contact_form_card w-[400px] max-w-[700px] min-h-[385px] bg-white rounded-md py-0 px-5 my-0 mx-[50px]" data-aos="zoom-in">
+                        <p className="contact_form_card_title text-gray-900 text-[20px] mt-4 font-bold mb-5 text-center">{t('page4.form.title')}</p>
                         <Form
                             form={form}
                             name="basic"
@@ -123,8 +168,7 @@ function Page4() {
                                     },
                                 ]}
                             >
-                                <Input placeholder={t('page4.form.name')}
-                                       style={{height: '50px', backgroundColor: '#F2F2F2'}}/>
+                                <Input placeholder={t('page4.form.name')} className=" h-[54px] bg-[#F2F2F2]"/>
                             </Form.Item>
 
                             <Form.Item
@@ -140,22 +184,20 @@ function Page4() {
                                     },
                                 ]}
                             >
-                                <Input placeholder="+998-90-866-60-51"
-                                       style={{height: '50px', backgroundColor: '#F2F2F2'}}/>
+                                <Input placeholder="+998-90-866-60-51" className=" h-[54px] bg-[#F2F2F2]"/>
                             </Form.Item>
 
                             <Form.Item>
-                                <button className="page4-btn" type="primary" htmlType="submit">
-                                    {t('page4.form.submit')}
-                                </button>
+                                <button className="contact_form_card_btn flex w-full items-center justify-center h-[50px] border-none outline-none rounded-md bg-[#242825] font-semibold text-white text-[16px] cursor-pointer mt-[50px]  " type="primary" htmlType="submit">{t('page4.form.submit')}</button>
                             </Form.Item>
                         </Form>
                     </div>
-                    <div className="page4-img none">
-                        <img className="page4-imgs" src={dezinodam} alt="Error"/>
+                    <div className="contact_form_card_banner none">
+                        <img className="contact_form_card_banner_img w-[270px] h-[390px] rounded-md object-cover" src={dezinodam} alt="Error"/>
                     </div>
                 </div>
             </div>
+
             <div>
                 {showModal && (
                     <div className="modal-background">
