@@ -10,7 +10,7 @@ function Main({handleMenuClick}) {
             <div className="main">
                 <Row>
                     <Col lg={12} md={24} sm={24} xs={24} className=" relative">
-                        <div className="mobile-info relative left-[100px]">
+                        <div className="mobile-info relative">
                             <p className="main-text" data-aos="fade-right">
                                 {t('page1.title')}
                             </p>

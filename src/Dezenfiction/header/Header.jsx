@@ -54,6 +54,7 @@ function Header() {
                         <div className="logo cursor-pointer" onClick={() => handleMenuClick("main-section")}>
                             <img className="logo-img" src={logo} alt="Error"/>
                         </div>
+                        <div >
                             <div className="menu-item-const menu-item">
                                 <div onClick={() => handleMenuClick("main-section")} className="menu-items none-menu" >
                                     <p>{t('header.menu1')}</p>
@@ -94,6 +95,7 @@ function Header() {
                             <div onClick={() => handleMenuClick("connect-section")} className="menu-items none-menu" >
                                 <button className="connect">{t('header.menu5')}</button>
                             </div>
+                        </div>
                         </div>
 
                         <div className="sidebar-menu none1" onClick={showDrawer}>

@@ -23,21 +23,21 @@ function About({handleMenuClick}) {
                         <div className=' about_card' data-aos="fade-left" >
                             <div className=" text-[50px] text-red-600 text-center"><ThunderboltOutlined/></div>
                             <div className="about_card_title text-gray-900 text-[30px] font-bold capitalize mb-0">{t('page2.card1.title')}</div>
-                            <p className="about_card_text text-gray-400 text-[14px] mt-3">{t('page2.card1.text')}</p>
+                            <p className="about_card_text text-white text-[14px] mt-3">{t('page2.card1.text')}</p>
                         </div>
                     </Col>
                     <Col lg={8} sm={24} md={24} xs={24}>
                         <div className=' about_card' data-aos="fade-right">
                             <div className=" text-[50px] text-red-600 text-center"> <FontAwesomeIcon icon={faBookmark} /></div>
                             <div className="about_card_title text-gray-900 text-[30px] font-[700] capitalize mb-0">{t('page2.card2.title')}</div>
-                            <p className="about_card_text text-gray-400 text-[14px] mt-3">{t('page2.card2.text')}</p>
+                            <p className="about_card_text text-white text-[14px] mt-3">{t('page2.card2.text')}</p>
                         </div>
                     </Col>
                     <Col lg={8} sm={24} md={24} xs={24}>
                         <div className=' about_card' data-aos="fade-left">
                             <div className=" text-[50px] text-red-600 text-center"><FontAwesomeIcon icon={faHandshake}/></div>
                             <div className="about_card_title text-gray-900 text-[30px] font-[700] capitalize mb-0">{t('page2.card3.title')}</div>
-                            <p className="about_card_text text-gray-400 text-[14px] mt-3">{t('page2.card3.text')}</p>
+                            <p className="about_card_text text-white text-[14px] mt-3">{t('page2.card3.text')}</p>
                         </div>
                     </Col>
                 </Row>

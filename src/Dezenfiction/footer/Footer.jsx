@@ -15,7 +15,7 @@ function Footer() {
                 <Row>
                     <Col lg={8} sm={24} xs={24}>
                         <div className="logo">
-                            <img className="logo-img" src={logo} alt="Error"/>
+                            <img className="logo-img-footer" src={logo} alt="Error"/>
                         </div>
                     </Col>
                     <Col lg={8} sm={24} xs={24} data-aos="fade-right">
